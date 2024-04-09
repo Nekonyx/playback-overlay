@@ -1,5 +1,51 @@
-## playback-overlay
+### Playback Overlay
 
-#### Credits:
+for OBS or any other streaming application.
 
-[Pause icons created by Slidicon - Flaticon](https://www.flaticon.com/free-icons/pause)
+Uses native Windows tools to get data about the current song, so streaming apps like Spotify, Deezer, iTunes, or any playable song/video from YouTube or YouTube Music, VK, Yandex Music, and so on are supported.
+
+![alt text](docs/hero.png)
+
+### Requirements
+
+- .NET 8.0 [[download here](https://dotnet.microsoft.com/download/)]
+- Windows 10 (November Update or newer), Windows 11
+
+### Usage
+
+#### I. Download and extract the latest version
+
+1. Download and extract **release-[numbers].zip** file from [releases page](https://github.com/Nekonyx/playback-overlay/releases/latest).
+2. Run `PlaybackDataServer.exe` and leave it running.
+
+#### II. Set up a streaming app
+
+If it is OBS or Streamlabs, use the instructions below:
+
+1. Create a new **Browser Source**
+2. Make sure "Local File" checkbox is enabled.
+3. Click "Browse" button and point to the `index.html` file.
+4. Set **width** to `400` and **height** to `100`
+5. Copy and paste **Custom CSS:**
+
+```css
+body,
+.app {
+  background: transparent;
+}
+```
+
+6. Done. Your settings should match this screenshot:
+
+<div style="display: flex; justify-content: center; gap: 16px;">
+  <a href="docs/obs.png">
+    <img src="docs/obs.png" alt="OBS example" />
+  </a>
+  <a href="docs/streamlabs.png">
+    <img src="docs/streamlabs.png" alt="Streamlabs example" />
+  </a>
+</div>
+
+### Credits
+
+[Pause icon created by Slidicon - Flaticon](https://www.flaticon.com/free-icons/pause)

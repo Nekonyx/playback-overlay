@@ -1,9 +1,13 @@
-name: Build CI/CD
+name: Build and Release
 
 on:
   push:
     branches:
       - master
+    paths:
+      - '.github/actions/workflows/**'
+      - 'server/**'
+      - 'client/**'
 
 jobs:
   server:

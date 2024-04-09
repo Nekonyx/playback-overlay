@@ -68,17 +68,20 @@ jobs:
         with:
           merge-multiple: true
 
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Compute version
+        id: version
+        run: |
+          echo "::set-output name=date::$(date +'%Y-%m-%d')"
+          echo "::set-output name=version::$(date +'%Y%m%d').${{ github.run_number }}"
 
       - name: Archive artifacts
-        run: zip -r release-${{ steps.date.outputs.date }}.zip .
+        run: zip -r release-${{ steps.version.outputs.date }}.zip .
 
       - name: Create Release
         uses: softprops/action-gh-release@v2.0.4
         with:
-          name: Release ${{ steps.date.outputs.date }} (${{ github.run_id }})
+          name: Release ${{ steps.version.outputs.version }}
           body: |
             This is an automated release based on commit ${{ github.sha }}.
-          files: release-${{ steps.date.outputs.date }}.zip
+          files: release-${{ steps.version.outputs.date }}.zip
+          tag_name: v${{ steps.version.outputs.version }}

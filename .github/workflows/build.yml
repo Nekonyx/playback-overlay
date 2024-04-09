@@ -73,7 +73,7 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
       - name: Archive artifacts
-        run: zip -r release-${{ steps.date.outputs.date }}.zip server client
+        run: zip -r release-${{ steps.date.outputs.date }}.zip .
 
       - name: Create Release
         uses: softprops/action-gh-release@v2.0.4

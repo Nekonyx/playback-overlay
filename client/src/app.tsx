@@ -85,7 +85,7 @@ export default function App() {
             <div className="cover__overlay">
               <img
                 className="cover__pause-icon"
-                src={noConnection ? '/broken-link-icon.svg' : '/pause.svg'}
+                src={noConnection ? './broken-link-icon.svg' : './pause.svg'}
               />
             </div>
           </div>

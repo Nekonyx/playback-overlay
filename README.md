@@ -25,26 +25,16 @@ If it is OBS or Streamlabs, use the instructions below:
 1. Create a new **Browser Source**
 2. Make sure "Local File" checkbox is enabled.
 3. Click "Browse" button and point to the `index.html` file.
-4. Set **width** to `400` and **height** to `100`
+4. Set **width** to `800` and **height** to `200`
 5. Copy and paste **Custom CSS:**
 
 ```css
-body,
-.app {
-  background: transparent;
+:root {
+  --bg: transparent;
 }
 ```
 
-6. Done. Your settings should match this screenshot:
-
-<div style="display: flex; justify-content: center; gap: 16px;">
-  <a href="docs/obs.png">
-    <img src="docs/obs.png" alt="OBS example" />
-  </a>
-  <a href="docs/streamlabs.png">
-    <img src="docs/streamlabs.png" alt="Streamlabs example" />
-  </a>
-</div>
+6. Done.
 
 ### Credits
 

@@ -90,8 +90,8 @@ export default function App() {
             </div>
           </div>
           <div className="data">
-            <span className="title">{mediaData.Title}</span>
             <span className="artist">{mediaData.Artist}</span>
+            <span className="title">{mediaData.Title}</span>
             <span className="progress-text">
               {formatTime(playbackData.Position)} / {formatTime(playbackData.Duration)}
             </span>
